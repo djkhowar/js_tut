@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: auto;
+        }
+        .form-container div {
+            margin-bottom: 15px;
+        }
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 8px;
+            box-sizing: border-box;
+        }
+        .form-container button {
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Enter Your Details</h2>
+        <div>
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" placeholder="Enter your first name">
+        </div>
+        <div>
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" placeholder="Enter your last name">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" placeholder="Enter your email">
+        </div>
+        <div>
+            <label for="contact">Contact Number:</label>
+            <input type="tel" id="contact" placeholder="Enter your contact number">
+        </div>
+        <button id="submitButton">Submit</button>
+    </div>
+
+    <div class="result">
+        <h3>Submitted Details</h3>
+        <p><strong>First Name:</strong> <span id="displayFirstName"></span></p>
+        <p><strong>Last Name:</strong> <span id="displayLastName"></span></p>
+        <p><strong>Email:</strong> <span id="displayEmail"></span></p>
+        <p><strong>Contact Number:</strong> <span id="displayContact"></span></p>
+    </div>
+    <script>
+
+        function setUserInfo() {
+            // Get the input values
+            let firstName = document.getElementById("firstName").value;
+            let lastName = document.getElementById("lastName").value;
+            let email = document.getElementById("email").value;
+            let contact = document.getElementById("contact").value;
+        
+            // Display the values on the page
+            document.getElementById("displayFirstName").innerText = firstName;
+            document.getElementById("displayLastName").innerText = lastName;
+            document.getElementById("displayEmail").innerText = email;
+            document.getElementById("displayContact").innerText = contact;
+        }
+        document.getElementById("submitButton").addEventListener("click",setUserInfo);
+    </script>
+</body>
+</html>
